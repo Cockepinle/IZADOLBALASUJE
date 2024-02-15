@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "fVK70pZmIXzSL/PhTbIJQLmeOCL03v2axWux2z7gDKam168Q8T+aPwFOUGTzLKv4xIRaPo46fATRBbA92JeCDg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alepi\\source\\repos\\EjednevnicDZ\\EjednevnicDZ\\EjednevnicDZ.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alepi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

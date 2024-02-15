@@ -1,0 +1,41 @@
+﻿<Window x:Class="EjednevnicDZ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EjednevnicDZ"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height= "28" />
+            <RowDefinition Height= "45"/>
+            <RowDefinition Height= "35"/>
+            <RowDefinition Height= "35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition />
+            <RowDefinition Height= "45"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48*" />
+            <ColumnDefinition Width="339*"/>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="300*" />
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="List"  DisplayMemberPath="title" Grid.RowSpan="5" Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" SelectionChanged="ListOfNotes"  ItemsSource="{Binding NotesOnSelectedDate, RelativeSource={RelativeSource AncestorType=Window}}" Grid.ColumnSpan="3" MaxHeight="350" MinHeight="100"/>
+        <DatePicker x:Name="dataPicker"  Grid.ColumnSpan="4" VerticalAlignment="Center" Height="24" Margin="10,0,10,0" SelectedDateChanged="DateSelection"/>
+        <TextBlock Text="Название:" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Height="15"/>
+        <TextBox x:Name="TitleIn" Text="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" SelectionChanged="NoteTitle" Height="17" Margin="33,0,38,0" />
+        <TextBlock Text="Описание:" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" Height="15"/>
+        <TextBox x:Name="DescriptionIn" Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Height="17" Margin="33,0,38,0" SelectionChanged="DescriptionOfTheNote"/>
+        <Button Content ="Удалить запись" Grid.Column="0" Grid.Row="5"  Click="DeletingANote" Grid.ColumnSpan="3" Margin="0,211,0,0" Grid.RowSpan="2" MaxHeight="25"/>
+        <Grid Grid.Column="3" Grid.Row="5" Grid.RowSpan="2" Margin="0,211,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="_buttonCreate" Content="Создать" Grid.Column="0" Grid.Row="0" Click="CreateANote" MaxHeight="25" HorizontalAlignment="Stretch"/>
+            <Button Content="Сохранить" Grid.Column="1" Grid.Row="0" Click="SaveANote" MaxHeight="25" HorizontalAlignment="Stretch"/>
+        </Grid>
+    </Grid>
+</Window>
